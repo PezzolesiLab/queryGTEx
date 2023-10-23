@@ -10,22 +10,10 @@
 
 ml bedtools
 
-#nephCera="/uufs/chpc.utah.edu/common/home/u6013142/projects/kathiresan/kidney_eQTLs/queryNephQTL/geneSet_ceramide/sortedSignif_ceramide_nephQTL_new.txt"
 gtexEFHD1="/uufs/chpc.utah.edu/common/home/u0854535/workflows/queryGTEx/sortedEFHD1Gene_GTEx.txt"
-#nephDKD="/uufs/chpc.utah.edu/common/home/u6013142/projects/kathiresan/kidney_eQTLs/queryNephQTL/geneSet_dkd/sorted_dkd_nephQTL.txt"
-#gtexCera="/uufs/chpc.utah.edu/common/home/u6013142/projects/kathiresan/ceramide_eQTLs/queryGTEx/sortedCeramideGenes_GTEx.txt"
-#gtexDKD="/uufs/chpc.utah.edu/common/home/u6013142/projects/kathiresan/ceramide_eQTLs/queryGTEx/sortedDKDGenes_GTEx.txt"
-#gtexBigDKD="/uufs/chpc.utah.edu/common/home/u6013142/projects/kathiresan/ceramide_eQTLs/queryGTEx/sortedBigDKDGenes_GTEx.txt"
-#nephBigDKD="/uufs/chpc.utah.edu/common/home/u6013142/projects/kathiresan/kidney_eQTLs/queryNephQTL/geneSet_dkdBig/sortedSignif_bigDKD_nephQTL.txt"
 
 declare -A eqtlMap
 eqtlMap[gtexEFHD1]="/uufs/chpc.utah.edu/common/home/u0854535/workflows/queryGTEx/sortedEFHD1Gene_GTEx.txt"
-#eqtlMap[nephCera]="/uufs/chpc.utah.edu/common/home/u6013142/projects/kathiresan/kidney_eQTLs/queryNephQTL/geneSet_ceramide/sortedSignif_ceramide_nephQTL_new.txt"
-#eqtlMap[nephDKD]="/uufs/chpc.utah.edu/common/home/u6013142/projects/kathiresan/kidney_eQTLs/queryNephQTL/geneSet_dkd/sorted_dkd_nephQTL.txt"
-#eqtlMap[gtexCera]="/uufs/chpc.utah.edu/common/home/u6013142/projects/kathiresan/ceramide_eQTLs/queryGTEx/sortedCeramideGenes_GTEx.txt"
-#eqtlMap[gtexDKD]="/uufs/chpc.utah.edu/common/home/u6013142/projects/kathiresan/ceramide_eQTLs/queryGTEx/sortedDKDGenes_GTEx.txt"
-#eqtlMap[gtexBigDKD]="/uufs/chpc.utah.edu/common/home/u6013142/projects/kathiresan/ceramide_eQTLs/queryGTEx/sortedBigDKDGenes_GTEx.txt"
-#eqtlMap[nephBigDKD]="/uufs/chpc.utah.edu/common/home/u6013142/projects/kathiresan/kidney_eQTLs/queryNephQTL/geneSet_dkdBig/sortedSignif_bigDKD_nephQTL.txt"
 
 # you need to bring in BETA still
 for f in ${eqtlMap[@]}; do
@@ -57,9 +45,4 @@ done
 #    fName=$(basename $fgz)
 #    cCRE=${fName%%.*}
 bedtools intersect -a ~/workflows/eQTL_encode/EFHD1_GTEx.bed -b cCRE_regions_hg19.bed > ./gtex/EFHD1GTEx_cCRE.txt
-#bedtools intersect -a ~/projects/kathiresan/eQTL_encode/ceraNephQTL.bed -b cCRE_regions_hg19.bed > ./nephqtl/ceraNephQTL_cCRE.txt
-#bedtools intersect -a ~/projects/kathiresan/eQTL_encode/bigDKDNephQTL.bed -b cCRE_regions_hg19.bed > ./nephqtl/bigDKDNephQTL_cCRE.txt
-#bedtools intersect -a ~/projects/kathiresan/eQTL_encode/dkdGtex.bed -b $fgz > dkdGtex_cCRE.txt
-#bedtools intersect -a ~/projects/kathiresan/eQTL_encode/bigDKDGTEx.bed -b cCRE_regions.bed > ./gtex/bigDKDGTEx_cCRE.txt
-#bedtools intersect -a ~/projects/kathiresan/eQTL_encode/ceraGTEx.bed -b cCRE_regions.bed > ./gtex/ceraGTEx_cCRE.txt
 #done

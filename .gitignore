@@ -3,4 +3,5 @@
 *.err
 *.out
 *.tar
+*.tsv
 .Rproj.user
