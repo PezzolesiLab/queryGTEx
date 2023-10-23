@@ -2816,7 +2816,7 @@ def draw_phewas(options)
   if options.rotate
     img.rotate!(90)
   end
-  img.write(outfile){self.quality = 80}
+  img.write(outfile){}
   print " Created #{outfile}\n\n"
 end
 
